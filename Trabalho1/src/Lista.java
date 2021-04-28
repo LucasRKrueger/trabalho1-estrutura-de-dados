@@ -121,14 +121,14 @@ public class Lista<T> {
     public int verificaFrequencia(NoLista<String> valor) {
         NoLista<T> p = primeiro;
 
-        int cont = 0;
+        int count = 0;
 
         while (p != null) {
             if (p.getInfo().toString().equalsIgnoreCase(valor.getInfo().toString())) {
-                cont++;
+                count++;
             }
             p = p.getProximo();
         }
-        return cont;
+        return count;
     }
 }

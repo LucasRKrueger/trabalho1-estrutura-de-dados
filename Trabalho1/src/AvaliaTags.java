@@ -8,8 +8,25 @@ public class AvaliaTags {
 		
 	Lista<String> tagsSingletonDefinidas = new Lista<>();
 	
+	public AvaliaTags() {
+		inserirTagsSemFechamento();
+	}
+	
 	public void validarEstrutura(String html) {
 		
+	}
+	
+	public String retornarFrequenciaTags(Lista<String> tagsCorretas) {
+		String texto = "";
+		
+		for(int i = 0; i < tagsCorretas.obterComprimento(); i++) {
+			int frequenciaTags = tagsCorretas.verificaFrequencia(this.tagsCorretas.getNo(i));
+			String tagAtual = tagsCorretas.getNo(i).getInfo();
+			
+			texto += "Tag " + tagAtual + "utilizada: " + frequenciaTags + " vezes";
+		}
+		
+		return texto;
 	}
 	
 	public void inserirTagsSemFechamento() {
