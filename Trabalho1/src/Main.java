@@ -49,24 +49,11 @@ public class Main {
 		frame.getContentPane().add(lblArquivo);
 		
 		txtArquivo = new JTextField();
-		txtArquivo.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		txtArquivo.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtArquivo.setBounds(73, 10, 247, 19);
 		frame.getContentPane().add(txtArquivo);
 		txtArquivo.setColumns(10);
-		
-		JButton btnAnalisar = new JButton("Analisar");
-		btnAnalisar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
 				
-				
-				//ANALISAR O ARQUIVO
-				
-			}
-		});
-		btnAnalisar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnAnalisar.setBounds(330, 10, 96, 21);
-		frame.getContentPane().add(btnAnalisar);
-		
 		JTextPane txtRetorno = new JTextPane();
 		txtRetorno.setEditable(false);
 		txtRetorno.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -78,5 +65,22 @@ public class Main {
 		txtTags.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtTags.setBounds(10, 138, 416, 89);
 		frame.getContentPane().add(txtTags);
+		
+		JButton btnAnalisar = new JButton("Analisar");
+		btnAnalisar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					txtRetorno.setText("");
+					
+					Arquivo arquivo = new Arquivo();
+					arquivo.ValidarArquivo(txtArquivo.getText());
+				} catch (Exception ex){
+					txtRetorno.setText(ex.getMessage());
+		        }
+			}
+		});
+		btnAnalisar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnAnalisar.setBounds(330, 10, 96, 21);
+		frame.getContentPane().add(btnAnalisar);
 	}
 }
