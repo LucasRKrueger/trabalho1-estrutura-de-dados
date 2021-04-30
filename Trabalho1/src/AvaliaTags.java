@@ -12,11 +12,12 @@ public class AvaliaTags {
 		inserirTagsSemFechamento();
 	}
 	
-	public void validarEstrutura(String html) {
-		
+	public String validarEstrutura(String html) {
+		return "";
 	}
 	
-	public String retornarFrequenciaTags(Lista<String> tagsCorretas) {
+	//VERIFICAR SE FUNCIONA COM MAIS DE 3 TAGS IGUAIS
+	public String retornarFrequenciaTags() {
 		String texto = "";
 		
 		for(int i = 0; i < tagsCorretas.obterComprimento(); i++) {

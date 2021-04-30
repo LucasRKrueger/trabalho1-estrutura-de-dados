@@ -70,10 +70,20 @@ public class Main {
 		btnAnalisar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					txtRetorno.setText("");
 					
 					Arquivo arquivo = new Arquivo();
-					arquivo.ValidarArquivo(txtArquivo.getText());
+					AvaliaTags validacaoTags = new AvaliaTags();
+					
+					txtRetorno.setText("");
+					txtTags.setText("");
+										
+					String arquivoFormatado = arquivo.ValidarArquivo(txtArquivo.getText());
+					           
+		            String retorno = validacaoTags.validarEstrutura(arquivoFormatado);
+
+		            txtRetorno.setText(retorno);
+		            txtTags.setText(validacaoTags.retornarFrequenciaTags());
+					
 				} catch (Exception ex){
 					txtRetorno.setText(ex.getMessage());
 		        }
