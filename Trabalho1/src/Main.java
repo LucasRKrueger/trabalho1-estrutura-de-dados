@@ -77,9 +77,20 @@ public class Main {
 					txtRetorno.setText("");
 					txtTags.setText("");
 										
-					String arquivoFormatado = arquivo.ValidarArquivo(txtArquivo.getText());
+					//String arquivoFormatado = arquivo.ValidarArquivo(txtArquivo.getText());
+					String text = "<!DOCTYPE html>\n"+
+								  "<html>\n" +
+								  "<div>\n" +
+			                      "<p>Teste</p>\n " +
+								  "<div></div>\n" +
+						          "</div>\n" +
+			                      "<h1>teasdasd</h1>\n" +
+						          "<div></div>\n" +
+						          "<hr>\n" +
+						          "<div></div>\n" +
+						          "</html>\n";
 					           
-		            String retorno = validacaoTags.validarEstrutura(arquivoFormatado);
+		            String retorno = validacaoTags.validarEstrutura(text);
 
 		            txtRetorno.setText(retorno);
 		            txtTags.setText(validacaoTags.retornarFrequenciaTags());

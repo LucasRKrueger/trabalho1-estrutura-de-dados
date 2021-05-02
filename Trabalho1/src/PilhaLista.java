@@ -7,12 +7,10 @@ public class PilhaLista<T> implements Pilha<T> {
 		lista = new Lista();
 	}
 
-	@Override
 	public void push(T info) {
 		lista.inserir(info);
 	}
 
-	@Override
 	public T pop() {
 		if (estaVazia())
 			throw new PilhaVaziaException();
@@ -24,7 +22,6 @@ public class PilhaLista<T> implements Pilha<T> {
 		return valor;
 	}
 
-	@Override
 	public T peek() {
 		if (estaVazia())
 			throw new PilhaVaziaException();
@@ -32,12 +29,10 @@ public class PilhaLista<T> implements Pilha<T> {
 		return lista.getPrimeiro().getInfo();
 	}
 
-	@Override
 	public boolean estaVazia() {
 		return lista.estaVazia();
 	}
 
-	@Override
 	public void liberar() {
 		while (!estaVazia()) {
 			pop();
@@ -45,7 +40,6 @@ public class PilhaLista<T> implements Pilha<T> {
 
 	}
 
-	@Override
 	public String toString() {
 		String resultado = "";
 		NoLista<T> p = lista.getPrimeiro();
@@ -58,5 +52,4 @@ public class PilhaLista<T> implements Pilha<T> {
 		}
 		return resultado;
 	}
-
 }
