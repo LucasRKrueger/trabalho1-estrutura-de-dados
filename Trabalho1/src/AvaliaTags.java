@@ -71,7 +71,6 @@ public class AvaliaTags {
 		return mensagem;
 	}
 	
-	//VERIFICAR SE FUNCIONA COM MAIS DE 3 TAGS IGUAIS
 	public String retornarFrequenciaTags() {
 		String texto = "";
 		String tagAtual = "";
@@ -82,8 +81,11 @@ public class AvaliaTags {
 			
 			if(tagNaoFoiValidada(tagsJaValidadas, tagsCorretas.getNo(i).getInfo())) {
 				frequenciaTags = tagsCorretas.verificaFrequencia(this.tagsCorretas.getNo(i));
+				
 				tagAtual = tagsCorretas.getNo(i).getInfo();
+				
 				tagsJaValidadas.add(tagAtual);
+				
 				texto += " Tag " + tagAtual + " utilizada: " + frequenciaTags + " vezes";
 			}	
 		}		
