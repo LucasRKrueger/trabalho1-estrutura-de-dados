@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.FileReader;
 
 public class Arquivo {
-	public String ValidarArquivo(String caminhoArquivo) throws Exception{
+	public String validarArquivo(String caminhoArquivo) throws Exception{
         try {       	
         	File arquivo = new File(caminhoArquivo);     
         	

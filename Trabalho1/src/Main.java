@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JTextPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.TextArea;
 
 public class Main {
 
@@ -39,7 +40,7 @@ public class Main {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 275);
+		frame.setBounds(100, 100, 450, 281);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -53,17 +54,15 @@ public class Main {
 		txtArquivo.setBounds(73, 10, 247, 19);
 		frame.getContentPane().add(txtArquivo);
 		txtArquivo.setColumns(10);
-				
-		JTextPane txtRetorno = new JTextPane();
+		
+		TextArea txtRetorno = new TextArea();
 		txtRetorno.setEditable(false);
-		txtRetorno.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		txtRetorno.setBounds(10, 39, 416, 89);
+		txtRetorno.setBounds(10, 35, 416, 100);
 		frame.getContentPane().add(txtRetorno);
 		
-		JTextPane txtTags = new JTextPane();
+		TextArea txtTags = new TextArea();
 		txtTags.setEditable(false);
-		txtTags.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		txtTags.setBounds(10, 138, 416, 89);
+		txtTags.setBounds(10, 141, 416, 100);
 		frame.getContentPane().add(txtTags);
 		
 		JButton btnAnalisar = new JButton("Analisar");
@@ -72,25 +71,14 @@ public class Main {
 				try {
 					
 					Arquivo arquivo = new Arquivo();
-					AvaliaTags validacaoTags = new AvaliaTags();
+					ValidacaoTags validacaoTags = new ValidacaoTags();
 					
 					txtRetorno.setText("");
 					txtTags.setText("");
 										
-					//String arquivoFormatado = arquivo.ValidarArquivo(txtArquivo.getText());
-					String text = "<!DOCTYPE html>\n"+
-								  "<html>\n" +
-								  "<div>\n" +
-			                      "<p>Teste</p>\n " +
-								  "<div></div>\n" +
-						          "</div>\n" +
-			                      "<h1>teasdasd</h1>\n" +
-						          "<div></div>\n" +
-						          "<hr>\n" +
-						          "<div></div>\n" +
-						          "</html>\n";
+					String arquivoFormatado = arquivo.validarArquivo(txtArquivo.getText());
 					           
-		            String retorno = validacaoTags.validarEstrutura(text);
+		            String retorno = validacaoTags.validarEstrutura(arquivoFormatado);
 
 		            txtRetorno.setText(retorno);
 		            txtTags.setText(validacaoTags.retornarFrequenciaTags());

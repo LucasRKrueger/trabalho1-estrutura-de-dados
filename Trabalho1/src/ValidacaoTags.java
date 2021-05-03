@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class AvaliaTags {
+public class ValidacaoTags {
 	
 	PilhaLista<String> tagsPilha = new PilhaLista<>();
 	Lista<String> tagsSingleton = new Lista<>();
@@ -24,7 +24,7 @@ public class AvaliaTags {
 	Matcher matcherAbertura;
 	Matcher matcherFechamento;
 	
-	public AvaliaTags() {
+	public ValidacaoTags() {
 		inserirTagsSemFechamento();
 	}
 	
@@ -86,7 +86,7 @@ public class AvaliaTags {
 				
 				tagsJaValidadas.add(tagAtual);
 				
-				texto += " Tag " + tagAtual + " utilizada: " + frequenciaTags + " vezes";
+				texto += " Tag " + tagAtual + " utilizada: " + frequenciaTags + " vezes \n";
 			}	
 		}		
 		return texto;
