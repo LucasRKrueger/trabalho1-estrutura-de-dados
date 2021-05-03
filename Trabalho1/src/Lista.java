@@ -18,15 +18,6 @@ public class Lista<T> {
 		this.primeiro = novo;
 	}
 
-	public void exibir() {
-		NoLista<T> p = primeiro;
-
-		while (p != null) {
-			System.out.println(p.getInfo());
-			p = p.getProximo();
-		}
-	}
-
 	public boolean estaVazia() {
 		return primeiro == null;
 	}
@@ -118,7 +109,7 @@ public class Lista<T> {
 	}
 
 
-    public int verificaFrequencia(NoLista<String> valor) {
+    public int verificaFrequencia(NoLista<T> valor) {
         NoLista<T> p = primeiro;
 
         int count = 0;
