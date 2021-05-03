@@ -4,7 +4,7 @@ public class PilhaLista<T> implements Pilha<T> {
 	private Lista<T> lista;
 
 	public PilhaLista() {
-		lista = new Lista();
+		lista = new Lista<T>();
 	}
 
 	public void push(T info) {

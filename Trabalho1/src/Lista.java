@@ -12,7 +12,7 @@ public class Lista<T> {
 	}
 
 	public void inserir(T info) {
-		NoLista<T> novo = new NoLista();
+		NoLista<T> novo = new NoLista<T>();
 		novo.setInfo(info);
 		novo.setProximo(primeiro);
 		this.primeiro = novo;

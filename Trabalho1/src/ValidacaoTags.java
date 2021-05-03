@@ -66,6 +66,9 @@ public class ValidacaoTags {
 				}
 			}
 		}		
+		
+		scanner.close();
+		
 		mensagem += this.tagsPilha.estaVazia() ? "Arquivo válido" : "Arquivo Inválido";
 		
 		return mensagem;

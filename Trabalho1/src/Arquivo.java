@@ -20,6 +20,8 @@ public class Arquivo {
                 conteudoArquivo += linha + "\n";
                 linha = bufferArquivo.readLine();
             }
+            
+            bufferArquivo.close();
 
                 return conteudoArquivo;
         } catch (ExtensionException e){
